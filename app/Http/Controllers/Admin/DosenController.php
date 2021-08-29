@@ -66,15 +66,6 @@ class DosenController extends Controller
 
         ]);
 
-            //insert ke table user
-            $user=new \App\User;
-            $user->assignRole('dosen');
-            $user->name=$request->nama_dosen;
-            $user->email=$request->email;
-            $user->password=bcrypt($request->password) ;
-            $user->email_verified_at=now();
-            $user->save();
-
         return redirect()->route('admin.dosen.index')->with('success', 'Data berhasil ditambah!');
 
     }

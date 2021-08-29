@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Dosen;
 use App\Http\Controllers\Controller;
 use App\JadwalPengajar;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class JadwalPengajarController extends Controller
 {
@@ -15,6 +17,7 @@ class JadwalPengajarController extends Controller
      */
     public function index()
     {
+          
         return view('dosen.dosen');
     }
 

@@ -11,6 +11,7 @@ use App\Mabna;
 use App\Mahasiswa;
 use App\TahunAkademik;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Yajra\Datatables\Datatables;
 
 class DataController extends Controller
@@ -65,4 +66,7 @@ class DataController extends Controller
             ->addColumn('action', 'admin.mahasiswa.action')
             ->tojson();
     }
+
+    
+   
 }

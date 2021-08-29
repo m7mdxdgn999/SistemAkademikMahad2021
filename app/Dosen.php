@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\Hash;
 
 class Dosen extends Authenticatable
 {
@@ -27,4 +28,10 @@ class Dosen extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    // untuk update password    
+    function setPasswordAttribute($value)
+    {
+        $this->attributes['password'] = Hash::make($value);
+    }
 }
