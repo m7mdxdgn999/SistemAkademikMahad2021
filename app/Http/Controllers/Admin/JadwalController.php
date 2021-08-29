@@ -25,7 +25,7 @@ class JadwalController extends Controller
         $data['mabna']=Mabna::pluck('nama_mabna','kode_mabna');
         $data['jadwal']= DB::table('jadwal')
                             ->join('pembinaan','jadwal.kode_pembinaan','=','pembinaan.kode_pembinaan')
-                            ->join('dosen','jadwal.kode_dosen','=','dosen.id')
+                            ->join('dosen','jadwal.kode_dosen','=','dosen.kode_dosen')
                             ->where('jadwal.kode_mabna',$mabna)
                             ->where('jadwal.semester',$semester)
                             ->get();

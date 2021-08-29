@@ -77,7 +77,7 @@
                                             <label for="kode_dosen">Dosen</label>
                                             <select class="form-control"  name="kode_dosen">
                                                 @foreach($dosen as $dsn)
-                                                <option value="{{ $dsn->id }}">{{ $dsn->nama_dosen }}</option>
+                                                <option value="{{ $dsn->kode_dosen }}">{{ $dsn->nama_dosen }}</option>
                                                 @endforeach
                                             </select>      
                                             @error('kode_dosen')

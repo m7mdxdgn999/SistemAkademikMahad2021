@@ -73,7 +73,7 @@
                                             <label for="kode_dosen">Musyrif</label>
                                             <select class="form-control"  name="kode_dosen">
                                                 @foreach($dosen as $dsn)
-                                                <option value="{{ $dsn->id }}" @if($dsn->id==$jadwal->kode_dosen)
+                                                <option value="{{ $dsn->kode_dosen }}" @if($dsn->id==$jadwal->kode_dosen)
                                                     selected
                                                 @endif>{{ $dsn->nama_dosen }}</option>
                                                 @endforeach
