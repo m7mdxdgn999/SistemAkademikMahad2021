@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\User;
+Use Illuminate\Support\Facades\DB;
 
 class AdminSeeder extends Seeder
 {
@@ -11,14 +12,13 @@ class AdminSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
-        $user=User::create ([
+    {  
+        
+        DB::table('admins')->insert([
             'name'=>'Admin Mahad',
             'email'=>'admin@gmail.com',
             'password'=>bcrypt('12345678'),
-            'email_verified_at'=>now()
         ]);
-        $user->assignRole('admin');     
         
     }
 }
