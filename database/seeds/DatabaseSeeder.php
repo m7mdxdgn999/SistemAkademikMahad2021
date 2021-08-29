@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
             MabnaSeeder::class,
             PembinaanSeeder::class,  
             TahunAkademikSeeder::class,          
-            // DosenSeeder::class,
+            DosenSeeder::class,
 
         ]);
     }
