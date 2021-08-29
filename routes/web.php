@@ -14,14 +14,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('start');
 });
 
 Auth::routes();
 // form login
-Route::get('/login/admin', 'Auth\LoginController@showAdminLoginForm');
-Route::get('/login/dosen', 'Auth\LoginController@showDosenLoginForm');
-Route::get('/login/mahasiswa', 'Auth\LoginController@showMahasiswaLoginForm');
+Route::get('/login/admin', 'Auth\LoginController@showAdminLoginForm')->name('admin');
+Route::get('/login/dosen', 'Auth\LoginController@showDosenLoginForm')->name('dosen');
+Route::get('/login/mahasiswa', 'Auth\LoginController@showMahasiswaLoginForm')->name('mahasiswa');
 
 // submit login
 Route::post('/login/admin', 'Auth\LoginController@adminLogin');
@@ -30,7 +30,4 @@ Route::post('/login/mahasiswa', 'Auth\LoginController@mahasiswaLogin');
 
 // if success
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/', function () {
-    return view('welcome');
-});
 
