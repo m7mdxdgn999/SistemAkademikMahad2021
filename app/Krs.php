@@ -15,4 +15,8 @@ class Krs extends Model
     public function pembinaan(){
         return $this->belongsTo(Pembinaan::class,'kode_pembinaan','kode_pembinaan');
     }
+
+    public function mahasiswa (){
+        return $this->belongsTo(Mahasiswa::class,'nim','nim');
+    }
 }

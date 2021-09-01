@@ -24,7 +24,8 @@
           <li class="menu-header">Musyrif</li>
           <li class=""><a class="nav-link" href="{{ route('admin.dosen.index') }}"><i class="fas fa-chalkboard-teacher"></i><span>Musyrif</span></a></li>
           <li class="menu-header">Mahasiwsa</li>
-          <li class=""><a class="nav-link" href="{{ route('admin.mahasiswa.index') }}"><i class="fas fa-user-graduate"></i><span>Mahasiwsa</span></a></li>           
+          <li class=""><a class="nav-link" href="{{ route('admin.mahasiswa.index') }}"><i class="fas fa-user-graduate"></i><span>Mahasiwsa</span></a></li>  
+          <li class=""><a class="nav-link" href="{{ route('admin.mahasiswa.krs.index') }}"><i class="fas fa-user-graduate"></i><span>Krs Mahasiwsa</span></a></li>         
         </ul>
     </aside>
   </div>

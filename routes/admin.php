@@ -59,3 +59,5 @@ Route::get('/mahasiswa/edit/{mahasiswa}', 'MahasiswaController@Edit')->name('mah
 Route::put('/mahasiswa/update/{mahasiswa}', 'MahasiswaController@Update')->name('mahasiswa.update');
 Route::get('/mahasiswa/show/{mahasiswa}', 'MahasiswaController@Show')->name('mahasiswa.show');
 Route::delete('/mahasiswa/delete/{mahasiswa}', 'MahasiswaController@Destroy')->name('mahasiswa.destroy');
+Route::get('/mahasiswa/krs', 'KrsController@Index')->name('mahasiswa.krs.index');
+Route::get('/mahasiswa/krs/data','DataController@krs')->name('mahasiswa.krs.data');

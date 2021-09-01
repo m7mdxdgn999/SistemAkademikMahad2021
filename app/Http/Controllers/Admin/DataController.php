@@ -6,10 +6,12 @@ use App\Building;
 use App\Http\Controllers\Controller;
 use App\Pembinaan;
 use App\Dosen;
+use App\Krs as AppKrs;
 use App\Kurikulum;
 use App\Mabna;
 use App\Mahasiswa;
 use App\TahunAkademik;
+use App\Krs;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Yajra\Datatables\Datatables;
@@ -18,14 +20,18 @@ class DataController extends Controller
 {
     public function buildings()
     {
-        return datatables()->of(Mabna::query())
+        $mabna=Mabna::orderBy('kode_mabna','ASC');
+        
+        return datatables()->of($mabna)
             ->addColumn('action', 'admin.mabna.action')
             ->tojson();
     }
 
     public function pembinaan()
     {
-        return datatables()->of(Pembinaan::query())
+        $pembinaan=Pembinaan::orderBy('kode_pembinaan','ASC');
+
+        return datatables()->of($pembinaan)
             ->addColumn('action', 'admin.pembinaan.action')
             ->tojson();
     }
@@ -65,6 +71,21 @@ class DataController extends Controller
             })            
             ->addColumn('action', 'admin.mahasiswa.action')
             ->tojson();
+    }
+
+    public function krs(){
+        $krs=Krs::latest();
+
+        return datatables()->of($krs)
+            ->addColumn('mahasiswa', function(Krs $model){
+            return $model->mahasiswa->nama_mahasiswa;
+            })
+            ->addColumn('pembinaan', function(Krs $model){
+                return $model->pembinaan->nama_pembinaan;
+            })                
+            ->addColumn('action', 'admin.mahasiswa.actionkrs')
+            ->tojson();
+
     }
 
     
