@@ -55,8 +55,9 @@
                 processing: true,
                 serverSide: true,
                 ajax: '{{ route('admin.mahasiswa.krs.data') }}',
-                columns: [{
-                        data: 'kode_krs'
+                columns: [
+                    {
+                        data: 'DT_RowIndex', orderable:false, searchable:false
                     },
                     {
                         data: 'nim'

@@ -6,6 +6,10 @@
 
         <div class="section-header">
             <h1>Mabna</h1>
+           
+            <div class="section-header-breadcrumb">
+                <div class="breadcrumb-item active"><a href="{{ route('admin.mabna.index') }}">Mabna</a></div>
+            </div>
         </div>
 
         <div class="section-body">

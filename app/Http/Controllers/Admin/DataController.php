@@ -77,6 +77,7 @@ class DataController extends Controller
         $krs=Krs::latest();
 
         return datatables()->of($krs)
+            ->addIndexColumn()
             ->addColumn('mahasiswa', function(Krs $model){
             return $model->mahasiswa->nama_mahasiswa;
             })
@@ -84,6 +85,7 @@ class DataController extends Controller
                 return $model->pembinaan->nama_pembinaan;
             })                
             ->addColumn('action', 'admin.mahasiswa.actionkrs')
+            
             ->tojson();
 
     }

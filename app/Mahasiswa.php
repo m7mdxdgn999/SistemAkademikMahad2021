@@ -25,9 +25,6 @@ class Mahasiswa extends Authenticatable
         return $this->belongsTo('App\TahunAkademik','kode_tahun_akademik','kode_tahun_akademik');
     }
 
-    public function krs(){
-        return $this->belongsToMany(Pembinaan::class,'krs'); 
-    }
 
     protected $primaryKey='nim';
     protected $keyType = 'string';
