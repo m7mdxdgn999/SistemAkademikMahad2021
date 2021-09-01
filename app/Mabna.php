@@ -18,6 +18,6 @@ class Mabna extends Model
 
     
     public function dosen(){
-        return $this->hasMany('App\Dosen','kode_mabna','id');
+        return $this->hasMany('App\Dosen','kode_mabna','kode_dosen');
     }
 }

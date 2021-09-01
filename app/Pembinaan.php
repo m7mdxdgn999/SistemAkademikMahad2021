@@ -12,4 +12,8 @@ class Pembinaan extends Model
     protected $keyType = 'string';
     public $timestamps = false;
     public $incrementing = false;
+
+    public function mhs(){
+        return $this->belongsToMany(Mahasiswa::class,'krs');
+    }
 }

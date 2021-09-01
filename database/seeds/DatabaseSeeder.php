@@ -1,5 +1,6 @@
 <?php
 
+use App\Mahasiswa;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -17,6 +18,7 @@ class DatabaseSeeder extends Seeder
             PembinaanSeeder::class,  
             TahunAkademikSeeder::class,          
             DosenSeeder::class,
+            MahasiswaSeeder::class,
 
         ]);
     }
