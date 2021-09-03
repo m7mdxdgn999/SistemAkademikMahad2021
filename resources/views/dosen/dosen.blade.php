@@ -14,7 +14,7 @@
                     {{-- table start --}}
                     <div class="card">
                         <div class="card-body">
-                            <table class="table table-bordered table-hover " id="datatable">
+                            <table class="table table-bordered table-hover " >
                                 <thead>
                                     <tr><th scope="col">Pembinaan</th>
                                         <th scope="col">Hari</th>
@@ -24,6 +24,29 @@
                                         <th scope="col">Aksi</th>
                                     </tr>
                                 </thead>
+                                <tbody>
+                                    @foreach ($jadwal as $jdwl)
+                                        <tr>
+                                            <td>{{ $jdwl->nama_pembinaan }}</td>
+                                            <td>{{ $jdwl->hari }}</td>
+                                            <td>{{ $jdwl->jam }}</td>
+                                            <td>{{ $jdwl->ruang }}</td>
+                                            <td>{{ $jdwl->nama_mabna }}</td>
+                                            <td>
+                                                <form action="{{ route('dosen.nilai.dosen', $jdwl->kode_jadwal) }}" method="get" class="float-left">
+                                                <button type="submit" class="btn btn-icon btn-primary "><i
+                                                        class="far fa-edit"></i> Input</button>
+                                                </form>
+
+                                                <form action="{{ route('dosen.nilai.dosen', $jdwl->kode_jadwal) }}" method="get" class="float-left">
+                                                    <button type="submit" class="btn btn-icon btn-primary "><i class="fas fa-portrait"></i> Kehadiran</button>
+                                                    </form>
+
+                                            </td>
+
+                                        </tr>
+                                    @endforeach
+                                </tbody>
                              </table>
 
                         </div>

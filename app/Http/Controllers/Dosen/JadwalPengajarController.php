@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Dosen;
 
 use App\Http\Controllers\Controller;
+use App\Jadwal;
 use App\JadwalPengajar;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -15,10 +16,15 @@ class JadwalPengajarController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Jadwal $jadwal)
     {
+        $data['jadwal']=DB::table('jadwal')
+            ->join('pembinaan','jadwal.kode_pembinaan','=','pembinaan.kode_pembinaan')
+            ->join('mabna','jadwal.kode_mabna','=','mabna.kode_mabna')
+            ->where('jadwal.kode_dosen', Auth::guard('dosen')->user()->kode_dosen)
+            ->get();
           
-        return view('dosen.dosen');
+        return view('dosen.dosen',$data);
     }
 
     /**

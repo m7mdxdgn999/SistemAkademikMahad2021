@@ -6,33 +6,15 @@
 
         <div class="section-header">
             <h1>Input Nilai</h1>
-
         </div>
 
         <div class="section-body">
-
-
             <div class="row">
                 <div class="col-12 col-md-12 col-lg-12">
-
-                    @if (session('message'))
-                        <div class="alert alert-success alert-dismissible show fade">
-                            <div class="alert-body">
-                                <button class="close" data-dismiss="alert">
-                                    <span>×</span>
-                                </button>
-                                {{ session('message') }}
-                            </div>
-                        </div>
-                    @endif
-
-                    {{-- </div> --}}
-                    {{-- tablde end --}}
 
                     {{-- table start --}}
                     <div class="card">
                         <div class="card-body">
-
                             <table class="table ">
                                 <thead>
                                     <tr><th scope="col" width="240">Kode Pembinaan</th>
@@ -58,7 +40,7 @@
                                        
                                     </tr>
                                 </thead>
-                                <tbody>
+                                {{-- <tbody>
                                     @foreach ($mahasiswa as $mhs)
                                         <tr>
                                             <td>{{ $mhs->nim }}</td>
@@ -72,13 +54,9 @@
                                                         class="far fa-edit"></i> ubah</button>
                                                 </form>
                                             </td>
-                                            {{-- <td><input id="kehadiran-{{ $mhs->kode_nilai }}" onkeyup="simpan_nilai('{{ $mhs->kode_nilai }}')" type="text" value=" {{ $mhs->nilai_kehadiran }} " width="50%"></td>
-                                            <td><input id="uts-{{ $mhs->kode_nilai }}" onkeyup="simpan_nilai('{{ $mhs->kode_nilai }}')" type="text" value="{{ $mhs->nilai_uts }}"></td>
-                                            <td><input id="uas-{{ $mhs->kode_nilai }}" onkeyup="simpan_nilai('{{ $mhs->kode_nilai }}')" type="text" value="{{ $mhs->nilai_uas }}"></td> --}}
-
                                         </tr>
                                     @endforeach
-                                </tbody>
+                                </tbody>  --}}
                             </table>
 
 
@@ -97,31 +75,3 @@
 
     @endsection
 
-    {{-- <script >
-        function simpan_nilai(id_khs)
-        {
-            var nilai_uas = $("#uas-"+id_khs).val();
-            var nilai_uts = $("#uts-"+id_khs).val();
-            var nilai_kehadiran = $("#kehadiran-"+id_khs).val();
-
-            
-            console.log(nilai_uas);
-            console.log(nilai_uts);
-            console.log(nilai_kehadiran);
-
-            var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
-            $.post("/nilai/update_nilai/update",
-            {
-            id_khs : id_khs,
-            nilai_uas : nilai_uas,
-            nilai_uts:nilai_uts,
-            nilai_kehadiran:nilai_kehadiran,
-            _token: CSRF_TOKEN
-        },
-
-
-        function(data, status){
-        //   alert('sukses')
-      });
-        }
-    </script> --}}
