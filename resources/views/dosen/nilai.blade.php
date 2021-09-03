@@ -40,7 +40,7 @@
                                        
                                     </tr>
                                 </thead>
-                                {{-- <tbody>
+                                <tbody>
                                     @foreach ($mahasiswa as $mhs)
                                         <tr>
                                             <td>{{ $mhs->nim }}</td>
@@ -56,7 +56,7 @@
                                             </td>
                                         </tr>
                                     @endforeach
-                                </tbody>  --}}
+                                </tbody> 
                             </table>
 
 
