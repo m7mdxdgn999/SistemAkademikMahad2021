@@ -8,6 +8,8 @@ use App\Http\Controllers\Controller;
 use App\Mabna;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\DosenExport;
 
 class DosenController extends Controller
 {
@@ -20,6 +22,10 @@ class DosenController extends Controller
     {
         return view('admin.dosen.dosen');
     }
+
+    public function exportExcel(){
+        return Excel::download(new DosenExport, 'data-dosen.xlsx');
+   }
 
     /**
      * Show the form for creating a new resource.
