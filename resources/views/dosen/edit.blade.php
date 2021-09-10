@@ -14,27 +14,11 @@
 
             <div class="row">
                 <div class="col-12 col-md-12 col-lg-12">
-
-                    @if (session('message'))
-                        <div class="alert alert-success alert-dismissible show fade">
-                            <div class="alert-body">
-                                <button class="close" data-dismiss="alert">
-                                    <span>×</span>
-                                </button>
-                                {{ session('message') }}
-                            </div>
-                        </div>
-                    @endif
-
-                    {{-- </div> --}}
-                    {{-- tablde end --}}
-
                     {{-- table start --}}
                     <div class="card">
                         <div class="card-body">
 
-
-                            <form action="{{ route('update.nilai',$nilai->kode_nilai) }}" method="post">
+                            <form action="{{ route('dosen.update.nilai',$khs) }}" method="post">
                                 @csrf
                                 @method('put')
                                 <div class="row">
@@ -42,8 +26,8 @@
                                         <div class="mb-3">
                                             <label for="nilai_kehadiran">Nilai Kehadiran</label>
                                             <input type="text" class="form-control @error('nip') is-invalid                                                    
-                                                        @enderror"  placeholder="NIP"
-                                                name="nilai_kehadiran" @if (old('nilai_kehadiran')) value="{{ old('nilai_kehadiran') }}" @else value="{{ $nilai->nilai_kehadiran }}" @endif>
+                                                        @enderror"  
+                                                name="nilai_kehadiran" @if (old('nilai_kehadiran')) value="{{ old('nilai_kehadiran') }}" @else value="{{ $khs->nilai_kehadiran }}" @endif>
                                             @error('nilai_kehadiran')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
@@ -53,7 +37,7 @@
                                             <input type="text"
                                                 class="form-control @error('nilai_uts') is-invalid @enderror "
                                                  placeholder="Kode Dosen"
-                                                name="nilai_uts" @if (old('nilai_uts')) value="{{ old('nilai_uts') }}" @else value="{{ $nilai->nilai_uts}}" @endif>
+                                                name="nilai_uts" @if (old('nilai_uts')) value="{{ old('nilai_uts') }}" @else value="{{ $khs->nilai_uts}}" @endif>
                                             @error('nilai_uts')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
@@ -63,7 +47,7 @@
                                             <input type="text"
                                                 class="form-control @error('nilai_uas') is-invalid @enderror "
                                                  placeholder="Nama Dosen"
-                                                name="nilai_uas" @if (old('nilai_uas')) value="{{ old('nilai_uas') }}" @else value="{{ $nilai->nilai_uas}}" @endif>
+                                                name="nilai_uas" @if (old('nilai_uas')) value="{{ old('nilai_uas') }}" @else value="{{ $khs->nilai_uas}}" @endif>
                                             @error('nilai_uas')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror

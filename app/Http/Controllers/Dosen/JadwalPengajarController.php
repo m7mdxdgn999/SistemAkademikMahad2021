@@ -22,8 +22,7 @@ class JadwalPengajarController extends Controller
             ->join('pembinaan','jadwal.kode_pembinaan','=','pembinaan.kode_pembinaan')
             ->join('mabna','jadwal.kode_mabna','=','mabna.kode_mabna')
             ->where('jadwal.kode_dosen', Auth::guard('dosen')->user()->kode_dosen)
-            ->get();
-          
+            ->get();          
         return view('dosen.dosen',$data);
     }
 

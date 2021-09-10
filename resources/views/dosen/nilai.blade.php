@@ -29,6 +29,10 @@
                                 </thead>
                             </table>
 
+                            <a href="{{ route('dosen.create.mahasiswa') }}" class="btn btn-icon icon-left btn-primary" style="margin-bottom:30px"><i
+                                class="far fa-edit"></i>
+                            Tambah Data Mahasiswa</a>
+
                             <table class="table ">
                                 <thead>
                                     <tr><th scope="col">NIM</th>
@@ -49,7 +53,7 @@
                                             <td>{{ $mhs->nilai_uts }}</td>
                                             <td>{{ $mhs->nilai_uas }}</td>
                                             <td>
-                                                <form action="{{ route('edit.nilai', $mhs->kode_nilai) }}" method="get" class="float-left">
+                                                <form action="{{ route('dosen.edit.nilai', $mhs->kode_nilai) }}" method="get" class="float-left">
                                                 <button type="submit" class="btn btn-icon btn-primary "><i
                                                         class="far fa-edit"></i> ubah</button>
                                                 </form>

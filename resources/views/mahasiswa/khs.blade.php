@@ -31,7 +31,7 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $khs->kode_pembinaan }}</td>
                                         <td>{{ $khs->nama_pembinaan }}</td>
-                                        <td></td>
+                                        <td>{{ $khs-> }}</td>
 
                                     </tr>
                                 @endforeach
@@ -74,17 +74,8 @@
                     </div>
 
                     {{-- tablde end --}}
-
-
                 </div>
-
             </div>
-
-
         </div>
-
-
-
-
 
     @endsection

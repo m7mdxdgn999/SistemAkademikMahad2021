@@ -16,9 +16,9 @@
             </ul>
           </li>
           <li class="menu-header">Mahaad Al-Jam'iah</li>
-          <li class=""><a class="nav-link" href=""><i class="fas fa-book"></i><span>Kartu Rencana Studi</span></a></li>
+          <li class=""><a class="nav-link" href="{{ route('mahasiswa.krs.index') }}"><i class="fas fa-book"></i><span>Kartu Rencana Studi</span></a></li>
           <li class=""><a class="nav-link" href=""><i class="fas fa-calendar-day"></i><span>Jadwal Pembinaan</span></a></li>
-          <li class=""><a class="nav-link" href=""><i class="fas fa-book"></i><span>Kartu Hasil Studi</span></a></li>
+          <li class=""><a class="nav-link" href="{{ route('mahasiswa.Khs.index') }}"><i class="fas fa-book"></i><span>Kartu Hasil Studi</span></a></li>
          
         </ul>
 
